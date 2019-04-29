@@ -10,6 +10,15 @@
   <p><%= @place.description %></p>
 
 
+
+  <% @place.photos.each do |photo| %>
+    <div>
+       <%= photo.caption %>
+   </div>
+
+  <% end %>
+
+
   
       
        
