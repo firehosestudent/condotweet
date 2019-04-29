@@ -68,7 +68,10 @@ gem "geocoder"
 
 gem "figaro"
 
+
 gem 'carrierwave', '~> 1.0'
+
+gem "fog-aws"
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
