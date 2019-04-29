@@ -10,14 +10,14 @@
   <p><%= @place.description %></p>
 
 
-
-  <% @place.photos.each do |photo| %>
-    <div>
-      <%= image_tag photo.picture %>
-      <%= photo.caption %>
-   </div>
-
-  <% end %>
+  
+    <% @place.photos.each do |photo| %>
+      <div>
+        <%= image_tag photo.picture %>
+        <%= photo.caption %>
+     </div>
+    <% end %>
+  
 
 
   
@@ -60,6 +60,12 @@
   
 
   <div class="float-right">
+
+
+      <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+      Add Photos
+    </button>
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
     <% end %>
@@ -107,13 +113,15 @@
 
 
 <br />
+<br />
+<br />
 
 
 <div class="col-10 offset-1">
   <h1 class="float-left">Comments</h1>
 
    <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">
     Add a comment
   </button>
 
@@ -139,10 +147,7 @@
 <div class="clear"></div>
 
 
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
-    Add Photos
-  </button>
+  
 
   <!-- Modal -->
   <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -157,7 +162,7 @@
 
       <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
         <div class="modal-body">
-          
+
           <%= f.input :picture %>  
           <%= f.input :caption %>
                          
