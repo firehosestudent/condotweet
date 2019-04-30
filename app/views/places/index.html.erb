@@ -5,11 +5,23 @@
 </div>
 
 
+
+
 <% @places.each do |place| %>
 
   <div class="booyah-box col-10 offset-1">
 
+    <% if place.photos.present? %>
+      <div>
+        <%= image_tag place.photos.last.picture, :width => "236", :height => "200" %>
+      </div>
+    <% end %>
+
     <h1><%= link_to place.name, place_path(place) %></h1><br />
+
+
+      
+    
 
 
     <i>
@@ -24,6 +36,10 @@
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
     <% end %>
+
+    
+
+
 
     <% if place.comments.present? %>
       <div class="col-12">
