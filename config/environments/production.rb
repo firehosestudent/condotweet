@@ -3,7 +3,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.default_url_options = { host: 'https://condotweet.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'condotweet.herokuapp.com' }
 
   config.action_mailer.perform_deliveries = true 
 
@@ -19,7 +19,7 @@ Rails.application.configure do
     authentication: :plain,
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
-    domain: 'https://condotweet.heroku.com',
+    domain: 'http://condotweet.heroku.com',
     enable_starttls_auto: true
   }
 
