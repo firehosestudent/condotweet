@@ -20,7 +20,7 @@ class Comment < ApplicationRecord
   end
 
   def send_comment_email
-    NotificationMailer.comment_added(self).deliver_now
+    NotificationMailer.comment_added(self).deliver
   end
 
 end
