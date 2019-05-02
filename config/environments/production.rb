@@ -1,5 +1,4 @@
-require 'sendgrid-ruby'
-include SendGrid
+
 
 
 Rails.application.configure do
