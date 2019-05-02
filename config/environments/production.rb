@@ -1,19 +1,28 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.default_url_options = { host: 'https://condotweet.herokuapp.com' }
+
+  config.action_mailer.perform_deliveries = true 
+
+  config.action_mailer.raise_delivery_errors = true 
+
+  config.action_mailer.default :charset => "utf-8"
+
 
   ActionMailer::Base.smtp_settings = {
+    :from => 'jonny_phun@hotmail.com',
     address: 'smtp.sendgrid.net',
-    port: '587',
+    port: 587,
     authentication: :plain,
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
-    domain: 'heroku.com',
+    domain: 'https://condotweet.heroku.com',
     enable_starttls_auto: true
   }
 
-  config.action_mailer.default_url_options = { :host => 'condotweet.herokuapp.com' }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
