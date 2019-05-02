@@ -1,6 +1,6 @@
 class NotificationMailer < ApplicationMailer
 
-  default from: "vzhang2324@gmail.com"
+  default from: "no-reply@condotweet.com"
 
   def comment_added(comment)
 
