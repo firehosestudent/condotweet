@@ -6,8 +6,8 @@ Rails.application.configure do
 
   
 
-  
-  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'https://condotweet.herokuapp.com' }
 
 
   ActionMailer::Base.smtp_settings = {
@@ -15,12 +15,12 @@ Rails.application.configure do
     password: ENV['SENDGRID_PASSWORD'],
     domain: 'heroku.com',
     address: 'smtp.sendgrid.net',
-    port: "587",
+    port: 587,
     authentication: :plain,
     enable_starttls_auto: true
   }
 
-  config.action_mailer.default_url_options = { :host => 'condotweet.herokuapp.com' }
+  
   
 
   # Code is not reloaded between requests.
